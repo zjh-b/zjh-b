@@ -1,4 +1,4 @@
-<img src="./assets/profile-banner.svg" alt="zjh-b。极光下的白猫和天文台里望月的旅人映衬着字标与卫星轨道。" width="100%">
+<img src="./assets/profile-banner-anime.svg" alt="zjh-b。极光下的白猫和天文台里望月的旅人映衬着字标与卫星轨道。" width="100%">
 
 创意编程、网页游戏和互动作品。
 
