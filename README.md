@@ -2,6 +2,11 @@
 
 创意编程、网页游戏和互动作品。
 
+<p align="center">
+  <img src="./assets/anime-aurora-cat.webp" alt="一只系着围巾的白猫站在山脊上，望向紫色群山和极光" width="48%">
+  <img src="./assets/anime-moonwatch.webp" alt="一位旅人透过天文台的窗户仰望满月" width="48%">
+</p>
+
 ## 作品选集
 
 **[风野奇旅 · 守望之境](https://zjh-b.github.io/windward-trails/)** · [源码](https://github.com/zjh-b/windward-trails)<br>
