@@ -1,0 +1,47 @@
+name: Update contribution snake
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/contribution-snake.yml
+  schedule:
+    - cron: '17 0 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contribution-snake-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    if: github.ref_type == 'branch' && github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out the profile repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Generate light and dark SVGs
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            github-snake-light.svg?palette=github-light&color_snake=#6424d6&color_dots=#ebe7f4,#ded0ff,#ad92f0,#8054dc,#5328a5
+            github-snake-dark.svg?palette=github-dark&color_snake=#77f6dc&color_dots=#211b37,#382b63,#5a43a1,#8a64d9,#bd9aff
+
+      - name: Commit and push updated SVGs
+        shell: bash
+        run: |
+          git add -- github-snake-light.svg github-snake-dark.svg
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Update contribution snake'
+          git push origin "HEAD:${GITHUB_REF}"
