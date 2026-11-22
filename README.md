@@ -1,11 +1,6 @@
-<img src="./assets/profile-banner.svg" alt="zjh-b" width="100%">
+<img src="./assets/profile-banner.svg" alt="zjh-b。极光下的白猫和天文台里望月的旅人映衬着字标与卫星轨道。" width="100%">
 
 创意编程、网页游戏和互动作品。
-
-<p align="center">
-  <img src="./assets/anime-aurora-cat.webp" alt="一只系着围巾的白猫站在山脊上，望向紫色群山和极光" width="48%">
-  <img src="./assets/anime-moonwatch.webp" alt="一位旅人透过天文台的窗户仰望满月" width="48%">
-</p>
 
 ## 作品选集
 
